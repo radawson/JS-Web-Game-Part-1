@@ -1,31 +1,38 @@
-/**
- * Author: Rishit Patel
- * Date: Nov 27, 2019
- * Description: Hi-Low Game
- */
-var theNum = 0;
+var secretNumber = 0;
 var counter = 0;
 var name;
 
-function randomNum() {
-  theNum = Math.floor(Math.random() * 100 + 1);
+function getRandom() {
+
+    secretNumber = Math.floor(Math.random() * 100 + 1);
 }
 
 function guessNum() {
-  counter++;
-  document.getElementById("counter").innerHTML = counter;
-  var numIn = 0;
-  numIn = document.getElementById("guess").value;
-  if (numIn > theNum) {
-    document.getElementById("theIcon").className = "fas fa-arrow-down";
-  } else if (numIn < theNum) {
-    document.getElementById("theIcon").className = "fas fa-arrow-up";
-  } else if (numIn == theNum) {
-    document.getElementById("theIcon").className = "fas fa-check-circle";
-    document.getElementById("theGuessing").style.display = "none";
-    document.getElementById("correctNum").innerHTML = theNum;
-    document.getElementById("win").style.display = "block";
-    document.body.style.backgroundColor = "limegreen";
-  }
-  document.getElementById("guess").value = "";
+    //increment the counter on each guess
+    counter++;
+
+    // update the guess counter
+    document.getElementById("counter").innerHTML = counter;
+
+    //Clear guessNumber
+    var guessNumber = 0;
+
+    //get the current guess number
+    guessNumber = document.getElementById("guess").value;
+
+    //check the guess number against the random number
+    if (guessNumber > secretNumber) {
+        document.getElementById("answerIcon").className = "fas fa-arrow-down";
+    } else if (guessNumber < secretNumber) {
+        document.getElementById("answerIcon").className = "fas fa-arrow-up";
+    } else {
+        document.getElementById("answerIcon").className = "fas fa-check-circle";
+        document.getElementById("guessingZone").style.display = "none";
+        document.getElementById("winningNumber").innerHTML = secretNumber;
+        document.getElementById("winZone").style.display = "block";
+        document.body.style.backgroundColor = "limegreen";
+    }
+
+    //Reset guess input
+    document.getElementById("guess").value = "";
 }

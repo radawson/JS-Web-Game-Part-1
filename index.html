@@ -15,16 +15,16 @@
     <script src="https://kit.fontawesome.com/336de93654.js" defer></script>
 </head>
 
-<body onload="randomNum()">
+<body onload="getRandom()">
     <main>
         <div class="px-4 py-5 my-5 text-center">
             <!-- art from https://www.clipartmax.com/middle/m2H7i8d3H7i8m2Z5_guess-the-number-calligraphy/ -->
             <img class="d-block mx-auto mb-4" src="assets/guess.png" alt="" width="72" height="57">
             <h1 class="display-5 fw-bold">Guess the number</h1>
-            <div class="theIcon">
-                <i class="fas fa-question" id="theIcon"></i>
+            <div class="answerIcon">
+                <i class="fas fa-question" id="answerIcon"></i>
             </div>
-            <div class="col-lg-6 mx-auto" id="theGuessing">
+            <div class="col-lg-6 mx-auto" id="guessingZone">
                 <p class="lead mb-4">It's everyone's favorite guessing game: Guess high or Low!</p>
                 <br <br>
                 <p>Number of guesses: <b id="counter"></b></p>
@@ -40,9 +40,9 @@
                     <button type="button" class="btn btn-outline-danger btn-lg px-4">Clear</button>
                 </div>
             </div>
-            <div id="win" style="display: none;">
+            <div id="winZone" style="display: none;">
                 <br>
-                <h1 id="correctNum"></h1><br>
+                <h1 id="winningNumber"></h1><br>
                 <h1>🎉Congratulations! You guessed correct number✌️</h1>
                 <button class="btn btn-primary" onclick="location.reload()">Play Again</button>
             </div>
