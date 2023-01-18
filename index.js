@@ -18,6 +18,10 @@ function guessNum() {
     //Clear guess input
     let guessNumber = 0;
 
+    // clear message
+    document.querySelector('#message').innerHTML = "";
+    document.querySelector('#message').style.display = "none";
+
     //get the current guess number
     guessNumber = document.querySelector('#guess').value;
 
@@ -37,13 +41,16 @@ function guessNum() {
         } else if (guessNumber < secretNumber) {
             //guess is less than secret number
             document.querySelector('#answerIcon').className = "fas fa-arrow-up";
-        } else {
+        } else if (guessNumber == secretNumber) {
             // guess and secret number are equal
             document.querySelector('#answerIcon').className = "fas fa-check-circle";
             document.querySelector('#guessingZone').style.display = "none";
             document.querySelector('#winZone').style.display = "block";
             document.querySelector('#winningNumber').innerHTML = secretNumber;
             document.body.style.backgroundColor = "limegreen";
+        }else {
+            document.querySelector('#message').style.display = "block";
+            document.querySelector('#message').innerHTML = "Not sure what you mean by that";
         }
     }
     // Reset guess input
