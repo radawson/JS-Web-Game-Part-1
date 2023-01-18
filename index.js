@@ -8,7 +8,7 @@ function getRandom() {
 }
 
 // Game logic
-function guessNum() {
+function makeGuess() {
     //increment the counter on each guess
     counter++;
 

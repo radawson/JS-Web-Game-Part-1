@@ -26,7 +26,9 @@
             </div>
             <div class="col-lg-6 mx-auto" id="guessingZone">
                 <h1 class="display-5 fw-bold">Guess the number</h1>
+                
                 <p class="lead mb-4">It's everyone's favorite guessing game: Guess high or Low!</p>
+                <p>Pick a number between 1 and 100.</p>
                 <p>You get 10 guesses.</p>
                 <br>
                 <h4 id="message" style="display: none;"></h4>
@@ -39,15 +41,15 @@
                         aria-describedby="guess">
                 </div>
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <button type="button" class="btn btn-outline-success btn-lg px-4 gap-3" onclick="guessNum()">Submit
+                    <button type="button" class="btn btn-outline-success btn-lg px-4 gap-3" onclick="makeGuess()">Submit
                         Guess</button>
                 </div>
             </div>
-            <div class="" id="winZone" style="display: none;">
+            <div id="winZone" style="display: none;">
                 <br>
                 <h1 id="winningNumber"></h1>
                 <br>
-                <h1>🎉 Congratulations! You guessed correct number 🎉</h1>
+                <h1> Congratulations! You guessed correct number </h1>
                 <button class="btn btn-primary" onclick="location.reload()">Play Again</button>
             </div>
             <div id="loseZone" style="display: none;">

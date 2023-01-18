@@ -1,5 +1,7 @@
 # Web Game I
 
-This is an activity for SD Lesson 5.3.3- Function Practice
+This is an implmentation of the hi-low guessing game.
 
-Please refer to the Activity Guide in Canvas for directions.
+This project uses Bootstrap for most styling.
+
+index.js uses plain Javascript with DOM manipulation.
