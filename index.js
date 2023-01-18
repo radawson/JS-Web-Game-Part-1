@@ -1,38 +1,34 @@
-var secretNumber = 0;
-var counter = 0;
-var name;
+// Set Some global variables
 
-function getRandom() {
 
-    secretNumber = Math.floor(Math.random() * 100 + 1);
-}
+// Generate a random number between 1 and 100
 
-function guessNum() {
+
+// Game logic
+
     //increment the counter on each guess
-    counter++;
+
 
     // update the guess counter
-    document.getElementById("counter").innerHTML = counter;
 
-    //Clear guessNumber
-    var guessNumber = 0;
+
+    //Clear guess input
+
 
     //get the current guess number
-    guessNumber = document.getElementById("guess").value;
+
 
     //check the guess number against the random number
-    if (guessNumber > secretNumber) {
-        document.getElementById("answerIcon").className = "fas fa-arrow-down";
-    } else if (guessNumber < secretNumber) {
-        document.getElementById("answerIcon").className = "fas fa-arrow-up";
-    } else {
-        document.getElementById("answerIcon").className = "fas fa-check-circle";
-        document.getElementById("guessingZone").style.display = "none";
-        document.getElementById("winningNumber").innerHTML = secretNumber;
-        document.getElementById("winZone").style.display = "block";
-        document.body.style.backgroundColor = "limegreen";
-    }
+   
+        //guess is more than secret number
 
-    //Reset guess input
-    document.getElementById("guess").value = "";
-}
+
+        //guess is less than secert number
+
+
+        // guess and secret number are equal
+
+ 
+
+    // Reset guess input
+
