@@ -12,15 +12,6 @@ function guessNum() {
     //increment the counter on each guess
     counter++;
 
-    //check counter is < 10
-    if (counter > 10) {
-        document.getElementById('answerIcon').className = "fas fa-times-circle";
-        document.getElementById('guessingZone').style.display = "none";
-        document.getElementById('loseZone').style.display = "block";
-        document.getElementById('winningNumber').innerHTML = secretNumber;
-        document.body.style.backgroundColor = "red";
-    }
-
     // update the guess counter
     document.getElementById('counter').innerHTML = counter;
 
@@ -29,21 +20,31 @@ function guessNum() {
 
     //get the current guess number
     guessNumber = document.getElementById('guess').value;
-
-    //check the guess number against the random number
-    if (guessNumber > secretNumber) {
-        //guess is more than secret number
-        document.getElementById('answerIcon').className = "fas fa-arrow-down";
-    } else if (guessNumber < secretNumber) {
-        //guess is less than secret number
-        document.getElementById('answerIcon').className = "fas fa-arrow-up";
-    } else {
-        // guess and secret number are equal
-        document.getElementById('answerIcon').className = "fas fa-check-circle";
+    
+    //check counter is < 10
+    if (counter > 10) {
+        document.getElementById('answerIcon').className = "fas fa-times-circle";
         document.getElementById('guessingZone').style.display = "none";
-        document.getElementById('winZone').style.display = "block";
-        document.getElementById('winningNumber').innerHTML = secretNumber;
-        document.body.style.backgroundColor = "limegreen";
+        document.getElementById('loseZone').style.display = "block";
+        document.getElementById('losingNumber').innerHTML = secretNumber;
+        document.body.style.backgroundColor = "red";
+    } else {
+
+        //check the guess number against the random number
+        if (guessNumber > secretNumber) {
+            //guess is more than secret number
+            document.getElementById('answerIcon').className = "fas fa-arrow-down";
+        } else if (guessNumber < secretNumber) {
+            //guess is less than secret number
+            document.getElementById('answerIcon').className = "fas fa-arrow-up";
+        } else {
+            // guess and secret number are equal
+            document.getElementById('answerIcon').className = "fas fa-check-circle";
+            document.getElementById('guessingZone').style.display = "none";
+            document.getElementById('winZone').style.display = "block";
+            document.getElementById('winningNumber').innerHTML = secretNumber;
+            document.body.style.backgroundColor = "limegreen";
+        }
     }
     // Reset guess input
     document.getElementById('guess').value = "";
