@@ -38,9 +38,13 @@ function guessNum() {
         if (guessNumber > secretNumber) {
             //guess is more than secret number
             document.querySelector('#answerIcon').className = "fas fa-arrow-down";
+            document.querySelector('#message').style.display = "block";
+            document.querySelector('#message').innerHTML = "Lower";
         } else if (guessNumber < secretNumber) {
             //guess is less than secret number
             document.querySelector('#answerIcon').className = "fas fa-arrow-up";
+            document.querySelector('#message').style.display = "block";
+            document.querySelector('#message').innerHTML = "Higher";
         } else if (guessNumber == secretNumber) {
             // guess and secret number are equal
             document.querySelector('#answerIcon').className = "fas fa-check-circle";
