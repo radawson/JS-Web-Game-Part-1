@@ -1,6 +1,31 @@
-let greenCharacter = document.createElement('img')
-greenCharacter.src = 'assets/green-character.gif'
-greenCharacter.style.position = 'fixed'
-greenCharacter.style.left = '100px'
-greenCharacter.style.bottom = '100px'
-document.body.append(greenCharacter)
+/**
+ * Author: Rishit Patel
+ * Date: Nov 27, 2019
+ * Description: Hi-Low Game
+ */
+var theNum = 0;
+var counter = 0;
+var name;
+
+function randomNum() {
+  theNum = Math.floor(Math.random() * 100 + 1);
+}
+
+function guessNum() {
+  counter++;
+  document.getElementById("counter").innerHTML = counter;
+  var numIn = 0;
+  numIn = document.getElementById("guess").value;
+  if (numIn > theNum) {
+    document.getElementById("theIcon").className = "fas fa-arrow-down";
+  } else if (numIn < theNum) {
+    document.getElementById("theIcon").className = "fas fa-arrow-up";
+  } else if (numIn == theNum) {
+    document.getElementById("theIcon").className = "fas fa-check-circle";
+    document.getElementById("theGuessing").style.display = "none";
+    document.getElementById("correctNum").innerHTML = theNum;
+    document.getElementById("win").style.display = "block";
+    document.body.style.backgroundColor = "limegreen";
+  }
+  document.getElementById("guess").value = "";
+}
